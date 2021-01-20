@@ -77,22 +77,22 @@ function draw() {
   packageSprite.x= packageBody.position.x 
   packageSprite.y= packageBody.position.y 
 
-  if(keyDown(LEFT_ARROW)){
-	helicopterSprite.x -= 10;
-	translation = {x:-10,y:0}
-	Body.translate(packageBody, translation);
-  } else{
-	if(keyDown(RIGHT_ARROW)){
-		helicopterSprite.x += 10;
-	    translation = {x:10,y:0}
-	    Body.translate(packageBody, translation);
-    } else{
-		helicopterSprite.velocityX =0;
-	}
-  }
-    
   if(keyDown(DOWN_ARROW)){
 	Body.setStatic(packageBody, false);
+  } else{
+	  if(keyDown(LEFT_ARROW)){
+		helicopterSprite.x -= 10;
+		translation = {x:-10,y:0}
+		Body.translate(packageBody, translation);
+	  } else{
+		if(keyDown(RIGHT_ARROW)){
+			helicopterSprite.x += 10;
+		    translation = {x:10,y:0}
+		    Body.translate(packageBody, translation);
+	    } else{
+			helicopterSprite.velocityX =0;
+		}
+	  }
   }
 
   drawSprites();
